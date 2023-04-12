@@ -70,34 +70,62 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    context 'when the previous step is 16' do
+      it 'returns 12' do
+        previous_step = 16
+        result = game.subtract_four(previous_step)
+        expect(result).to eq(12)
+      end
+    end
   end
 
   describe '#divide_by_two' do
+    context 'when the previous step is 12' do
+      it 'returns 6' do
+        previous_step = 12
+        result = game.divide_by_two(previous_step)
+        expect(result).to eq(6)
+      end
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
   describe '#subtract_random_number' do
+    context 'when the random number is 15 and the previous step is 6' do
+      it 'returns -9' do
+        magic_seven = MagicSeven.new(15)
+        previous_step = 6
+        result = magic_seven.subtract_random_number(previous_step)
+        expect(result).to eq(-9)
+      end
+    end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
-      # remove the 'x' before running this test
-      xit 'will return 7' do
+    context 'when the random number is 8' do
+      it 'will return 7' do
+        magic_seven = MagicSeven.new(8)
+        result = magic_seven.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
-      # remove the 'x' before running this test
-      xit 'will return 7' do
+    context 'when the random number is 17' do
+      it 'will return 7' do
+        magic_seven = MagicSeven.new(17)
+        result = magic_seven.play
+        expect(result).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
-      # remove the 'x' before running this test
-      xit 'will return 7' do
+    context 'when the random number is 3' do
+      it 'will return 7' do
+        magic_seven = MagicSeven.new(3)
+        result = magic_seven.play
+        expect(result).to eq(7)
       end
     end
   end
